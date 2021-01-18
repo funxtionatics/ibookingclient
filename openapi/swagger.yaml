@@ -1,0 +1,389 @@
+openapi: 3.0.0
+info:
+  title: iBookings API - Final
+  description: iBooking components
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+  - url: http://funxtion.testing.ibooking.no/webapp/api
+tags:
+  - name: members
+    description: pulling in members
+  - name: gyms
+    description: pulling in gyms
+  - name: login
+    description: handle login
+paths:
+  /User/login:
+    post:
+      tags:
+        - login
+      summary: This method will upon success return a token that must be used for
+        further communication with the API.
+      operationId: login
+      requestBody:
+        description: LoginRequestParameters object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequestParameters'
+        required: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+      security: []
+  /User/logout:
+    post:
+      tags:
+        - login
+      summary: Invalidates the token provided, and resets any auth session used for
+        other iBooking services.
+      operationId: logout
+      requestBody:
+        description: Token to invalidate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body'
+      responses:
+        "200":
+          description: Success
+      security:
+        - ApiKeyAuth: []
+  /User/getUserInfo:
+    get:
+      tags:
+        - members
+      summary: This method will upon success return user info
+      operationId: getUserInfo
+      parameters:
+        - name: userId
+          in: query
+          description: Either userId of username
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+        - name: username
+          in: query
+          description: Either userId of username
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserInfoResponse'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+        - ApiKeyAuth: []
+  /Chain/members:
+    get:
+      tags:
+        - members
+      summary: This method will list all the members in the same chain as the current
+        company.
+      operationId: getMembers
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMembersResponse'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+        - ApiKeyAuth: []
+  /Chain/gyms:
+    get:
+      tags:
+        - gym
+      summary: Get gyms
+      operationId: getGyms
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetGymsResponse'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+        - ApiKeyAuth: []
+components:
+  schemas:
+    UserInfoResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstname:
+          type: string
+        lastname:
+          type: string
+        expires:
+          type: string
+          description: 'Membership expires at this time. Format: YYYY-MM-DD HH:MM:SS.'
+        activeBlock:
+          type: boolean
+          description: If true, the member can't book online.
+        email:
+          type: string
+        phone:
+          type: string
+        username:
+          type: string
+        cardnumber:
+          type: string
+          nullable: true
+        customerNumber:
+          type: integer
+          format: int64
+        studio:
+          type: integer
+          description: Studio ID
+          format: int64
+        contract:
+          $ref: '#/components/schemas/Contract'
+        noshowCount:
+          type: integer
+          description: Current active noshow count
+          format: int64
+        avtalegiroStatus:
+          type: string
+          description: '{new,not-applicable,signed,revoked,unkown}.'
+          enum:
+            - new
+            - not-applicable
+            - signed
+            - revoked
+            - unkown
+        dateOfBirth:
+          type: string
+          description: 'Format: YYYY-MM-DD.'
+          format: date
+        address:
+          $ref: '#/components/schemas/Address'
+        hasPassword:
+          type: boolean
+    Contract:
+      type: object
+      properties:
+        offeringCode:
+          type: integer
+          format: int64
+        name:
+          type: string
+        start:
+          type: string
+          description: 'Format: YYYY-MM-DD.'
+          format: date
+        end:
+          type: string
+          description: 'Format: YYYY-MM-DD.'
+          format: date
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        street1:
+          type: string
+        street2:
+          type: string
+          nullable: true
+        postalCode:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+    LoginRequestParameters:
+      required:
+        - password
+        - username
+      type: object
+      properties:
+        username:
+          type: string
+          description: The username of the user logging in.
+        password:
+          type: string
+          description: The password of the user logging in.
+        lang:
+          type: string
+          description: Language code in ISO 3166-1 alpha-2 format.
+          default: "NO"
+        ttl:
+          type: string
+          description: Token Time To Live in seconds.
+          default: "3600"
+        accessToken:
+          type: string
+          description: Access token for server-to-server requests.
+        spc:
+          type: boolean
+          description: If true, the password field will be optional. Requires valid
+            accessToken.
+          default: false
+    LoginResponse:
+      type: object
+      properties:
+        authToken:
+          type: string
+          description: A token that identifies and authenticates the user.
+        authTokenExpires:
+          type: string
+          description: A timestamp in YYYY-MM-DD HH:MM:SS format stating when the
+            authToken expires.
+        user:
+          $ref: '#/components/schemas/UserInfoResponse'
+    GetMembersResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int32
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member'
+        gym:
+          $ref: '#/components/schemas/Gym'
+        phone:
+          type: string
+        email:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+        firstCreated:
+          type: string
+          format: date
+        contractStarted:
+          type: string
+          format: date
+        offerings:
+          type: array
+          items:
+            type: integer
+            format: int64
+        active:
+          type: boolean
+        frozen:
+          type: boolean
+        hasAcceptedCommunication:
+          $ref: '#/components/schemas/CommunicationChannels'
+        inLoyalityProgram:
+          type: boolean
+    CommunicationChannels:
+      type: object
+      properties:
+        sms:
+          type: boolean
+        email:
+          type: boolean
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: An error message saying why it failed
+        errorCode:
+          type: string
+        errorMessage:
+          type: string
+    GetGymsResponse:
+      type: object
+      properties:
+        gyms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Gym'
+    Member:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        customerNumber:
+          type: integer
+          format: int64
+        username:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        dateOfBirth:
+          type: string
+          format: date
+        gender:
+          type: string
+          enum:
+            - male
+            - female
+            - none
+    Gym:
+      type: object
+      properties:
+        companyId:
+          type: integer
+          format: int64
+        studioId:
+          type: integer
+          format: int64
+        companyName:
+          type: string
+        studioName:
+          type: string
+        baseUrl:
+          type: string
+    body:
+      properties:
+        token:
+          type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      name: X-Access-Token
+      in: header
