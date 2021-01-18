@@ -116,7 +116,7 @@ class LoginApi
      */
     public function loginWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\model\LoginResponse';
+        $returnType = '\iBooking\Client\model\LoginResponse';
         $request = $this->loginRequest($body);
 
         try {
@@ -210,7 +210,7 @@ class LoginApi
      */
     public function loginAsyncWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\model\LoginResponse';
+        $returnType = '\iBooking\Client\model\LoginResponse';
         $request = $this->loginRequest($body);
 
         return $this->client

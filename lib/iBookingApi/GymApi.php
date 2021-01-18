@@ -114,7 +114,7 @@ class GymApi
      */
     public function getGymsWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\model\GetGymsResponse';
+        $returnType = '\iBooking\Client\model\GetGymsResponse';
         $request = $this->getGymsRequest();
 
         try {
@@ -166,7 +166,7 @@ class GymApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\GetGymsResponse',
+                        '\iBooking\Client\model\GetGymsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -214,7 +214,7 @@ class GymApi
      */
     public function getGymsAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\model\GetGymsResponse';
+        $returnType = '\iBooking\Client\model\GetGymsResponse';
         $request = $this->getGymsRequest();
 
         return $this->client

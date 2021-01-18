@@ -114,7 +114,7 @@ class MembersApi
      */
     public function getMembersWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\model\GetMembersResponse';
+        $returnType = '\iBooking\Client\model\GetMembersResponse';
         $request = $this->getMembersRequest();
 
         try {
@@ -222,7 +222,7 @@ class MembersApi
      */
     public function getMembersAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\model\GetMembersResponse';
+        $returnType = '\iBooking\Client\model\GetMembersResponse';
         $request = $this->getMembersRequest();
 
         return $this->client

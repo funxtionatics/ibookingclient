@@ -67,11 +67,11 @@ class UserInfoResponse implements ModelInterface, ArrayAccess
 'cardnumber' => 'string',
 'customer_number' => 'int',
 'studio' => 'int',
-'contract' => '\Swagger\Client\model\Contract',
+'contract' => '\iBooking\Client\model\Contract',
 'noshow_count' => 'int',
 'avtalegiro_status' => 'string',
 'date_of_birth' => '\DateTime',
-'address' => '\Swagger\Client\model\Address',
+'address' => '\iBooking\Client\model\Address',
 'has_password' => 'bool'    ];
 
     /**
