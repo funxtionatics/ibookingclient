@@ -1,4 +1,4 @@
-# Swagger\Client\MembersApi
+# iBooking\Client\MembersApi
 
 All URIs are relative to *http://funxtion.testing.ibooking.no/webapp/api*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getUserInfo**](MembersApi.md#getuserinfo) | **GET** /User/getUserInfo | This method will upon success return user info
 
 # **getMembers**
-> \Swagger\Client\model\GetMembersResponse getMembers()
+> \iBooking\Client\model\GetMembersResponse getMembers()
 
 This method will list all the members in the same chain as the current company.
 
@@ -17,11 +17,11 @@ This method will list all the members in the same chain as the current company.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: ApiKeyAuth
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Access-Token', 'YOUR_API_KEY');
+$config = iBooking\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Access-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Access-Token', 'Bearer');
+// $config = iBooking\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Access-Token', 'Bearer');
 
-$apiInstance = new Swagger\Client\iBookingApi\MembersApi(
+$apiInstance = new iBooking\Client\iBookingApi\MembersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\model\GetMembersResponse**](../Model/GetMembersResponse.md)
+[**\iBooking\Client\model\GetMembersResponse**](../Model/GetMembersResponse.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserInfo**
-> \Swagger\Client\model\UserInfoResponse getUserInfo($user_id, $username)
+> \iBooking\Client\model\UserInfoResponse getUserInfo($user_id, $username)
 
 This method will upon success return user info
 
@@ -65,11 +65,11 @@ This method will upon success return user info
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: ApiKeyAuth
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Access-Token', 'YOUR_API_KEY');
+$config = iBooking\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Access-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Access-Token', 'Bearer');
+// $config = iBooking\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Access-Token', 'Bearer');
 
-$apiInstance = new Swagger\Client\iBookingApi\MembersApi(
+$apiInstance = new iBooking\Client\iBookingApi\MembersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

@@ -1,4 +1,4 @@
-# Swagger\Client\LoginApi
+# iBooking\Client\LoginApi
 
 All URIs are relative to *http://funxtion.testing.ibooking.no/webapp/api*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**logout**](LoginApi.md#logout) | **POST** /User/logout | Invalidates the token provided, and resets any auth session used for other iBooking services.
 
 # **login**
-> \Swagger\Client\model\LoginResponse login($body)
+> \iBooking\Client\model\LoginResponse login($body)
 
 This method will upon success return a token that must be used for further communication with the API.
 
@@ -17,12 +17,12 @@ This method will upon success return a token that must be used for further commu
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\iBookingApi\LoginApi(
+$apiInstance = new iBooking\Client\iBookingApi\LoginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\model\LoginRequestParameters(); // \Swagger\Client\model\LoginRequestParameters | LoginRequestParameters object
+$body = new \iBooking\Client\model\LoginRequestParameters(); // \iBooking\Client\model\LoginRequestParameters | LoginRequestParameters object
 
 try {
     $result = $apiInstance->login($body);
@@ -37,11 +37,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\model\LoginRequestParameters**](../Model/LoginRequestParameters.md)| LoginRequestParameters object |
+ **body** | [**\iBooking\Client\model\LoginRequestParameters**](../Model/LoginRequestParameters.md)| LoginRequestParameters object |
 
 ### Return type
 
-[**\Swagger\Client\model\LoginResponse**](../Model/LoginResponse.md)
+[**\iBooking\Client\model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 
@@ -64,17 +64,17 @@ Invalidates the token provided, and resets any auth session used for other iBook
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: ApiKeyAuth
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Access-Token', 'YOUR_API_KEY');
+$config = iBooking\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Access-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Access-Token', 'Bearer');
+// $config = iBooking\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Access-Token', 'Bearer');
 
-$apiInstance = new Swagger\Client\iBookingApi\LoginApi(
+$apiInstance = new iBooking\Client\iBookingApi\LoginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\model\Body(); // \Swagger\Client\model\Body | Token to invalidate
+$body = new \iBooking\Client\model\Body(); // \iBooking\Client\model\Body | Token to invalidate
 
 try {
     $apiInstance->logout($body);
@@ -88,7 +88,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\model\Body**](../Model/Body.md)| Token to invalidate | [optional]
+ **body** | [**\iBooking\Client\model\Body**](../Model/Body.md)| Token to invalidate | [optional]
 
 ### Return type
 
