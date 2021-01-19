@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\iBookingApi;
+namespace iBooking\Client\iBookingApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use iBooking\Client\ApiException;
+use iBooking\Client\Configuration;
+use iBooking\Client\HeaderSelector;
+use iBooking\Client\ObjectSerializer;
 
 /**
  * LoginApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -91,11 +91,11 @@ class LoginApi
      *
      * This method will upon success return a token that must be used for further communication with the API.
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
+     * @param  \iBooking\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \iBooking\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\model\LoginResponse
+     * @return \iBooking\Client\model\LoginResponse
      */
     public function login($body)
     {
@@ -108,15 +108,15 @@ class LoginApi
      *
      * This method will upon success return a token that must be used for further communication with the API.
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
+     * @param  \iBooking\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \iBooking\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\model\LoginResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \iBooking\Client\model\LoginResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function loginWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\model\LoginResponse';
+        $returnType = '\iBooking\Client\model\LoginResponse';
         $request = $this->loginRequest($body);
 
         try {
@@ -168,7 +168,7 @@ class LoginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\LoginResponse',
+                        '\iBooking\Client\model\LoginResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -183,7 +183,7 @@ class LoginApi
      *
      * This method will upon success return a token that must be used for further communication with the API.
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
+     * @param  \iBooking\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -203,14 +203,14 @@ class LoginApi
      *
      * This method will upon success return a token that must be used for further communication with the API.
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
+     * @param  \iBooking\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function loginAsyncWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\model\LoginResponse';
+        $returnType = '\iBooking\Client\model\LoginResponse';
         $request = $this->loginRequest($body);
 
         return $this->client
@@ -253,7 +253,7 @@ class LoginApi
     /**
      * Create request for operation 'login'
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
+     * @param  \iBooking\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -348,9 +348,9 @@ class LoginApi
      *
      * Invalidates the token provided, and resets any auth session used for other iBooking services.
      *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
+     * @param  \iBooking\Client\model\Body $body Token to invalidate (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \iBooking\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -364,9 +364,9 @@ class LoginApi
      *
      * Invalidates the token provided, and resets any auth session used for other iBooking services.
      *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
+     * @param  \iBooking\Client\model\Body $body Token to invalidate (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \iBooking\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -417,7 +417,7 @@ class LoginApi
      *
      * Invalidates the token provided, and resets any auth session used for other iBooking services.
      *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
+     * @param  \iBooking\Client\model\Body $body Token to invalidate (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -437,7 +437,7 @@ class LoginApi
      *
      * Invalidates the token provided, and resets any auth session used for other iBooking services.
      *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
+     * @param  \iBooking\Client\model\Body $body Token to invalidate (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -473,7 +473,7 @@ class LoginApi
     /**
      * Create request for operation 'logout'
      *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
+     * @param  \iBooking\Client\model\Body $body Token to invalidate (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

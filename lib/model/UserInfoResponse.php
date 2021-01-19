@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\model;
+namespace iBooking\Client\model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \iBooking\Client\ObjectSerializer;
 
 /**
  * UserInfoResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -67,11 +67,11 @@ class UserInfoResponse implements ModelInterface, ArrayAccess
 'cardnumber' => 'string',
 'customer_number' => 'int',
 'studio' => 'int',
-'contract' => '\Swagger\Client\model\Contract',
+'contract' => '\iBooking\Client\model\Contract',
 'noshow_count' => 'int',
 'avtalegiro_status' => 'string',
 'date_of_birth' => '\DateTime',
-'address' => '\Swagger\Client\model\Address',
+'address' => '\iBooking\Client\model\Address',
 'has_password' => 'bool'    ];
 
     /**
@@ -586,7 +586,7 @@ self::AVTALEGIRO_STATUS_UNKOWN,        ];
     /**
      * Gets contract
      *
-     * @return \Swagger\Client\model\Contract
+     * @return \iBooking\Client\model\Contract
      */
     public function getContract()
     {
@@ -596,7 +596,7 @@ self::AVTALEGIRO_STATUS_UNKOWN,        ];
     /**
      * Sets contract
      *
-     * @param \Swagger\Client\model\Contract $contract contract
+     * @param \iBooking\Client\model\Contract $contract contract
      *
      * @return $this
      */
@@ -691,7 +691,7 @@ self::AVTALEGIRO_STATUS_UNKOWN,        ];
     /**
      * Gets address
      *
-     * @return \Swagger\Client\model\Address
+     * @return \iBooking\Client\model\Address
      */
     public function getAddress()
     {
@@ -701,7 +701,7 @@ self::AVTALEGIRO_STATUS_UNKOWN,        ];
     /**
      * Sets address
      *
-     * @param \Swagger\Client\model\Address $address address
+     * @param \iBooking\Client\model\Address $address address
      *
      * @return $this
      */

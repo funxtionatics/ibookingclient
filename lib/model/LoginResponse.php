@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\model;
+namespace iBooking\Client\model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \iBooking\Client\ObjectSerializer;
 
 /**
  * LoginResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'auth_token' => 'string',
 'auth_token_expires' => 'string',
-'user' => '\Swagger\Client\model\UserInfoResponse'    ];
+'user' => '\iBooking\Client\model\UserInfoResponse'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -259,7 +259,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \Swagger\Client\model\UserInfoResponse
+     * @return \iBooking\Client\model\UserInfoResponse
      */
     public function getUser()
     {
@@ -269,7 +269,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \Swagger\Client\model\UserInfoResponse $user user
+     * @param \iBooking\Client\model\UserInfoResponse $user user
      *
      * @return $this
      */

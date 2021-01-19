@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\iBookingApi;
+namespace iBooking\Client\iBookingApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use iBooking\Client\ApiException;
+use iBooking\Client\Configuration;
+use iBooking\Client\HeaderSelector;
+use iBooking\Client\ObjectSerializer;
 
 /**
  * EventApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,9 +92,9 @@ class EventApi
      * Get events
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \iBooking\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\model\GetEventsResponse
+     * @return \iBooking\Client\model\GetEventsResponse
      */
     public function getEvents()
     {
@@ -108,13 +108,13 @@ class EventApi
      * Get events
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \iBooking\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\model\GetEventsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \iBooking\Client\model\GetEventsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEventsWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\model\GetEventsResponse';
+        $returnType = '\iBooking\Client\model\GetEventsResponse';
         $request = $this->getEventsRequest();
 
         try {
@@ -166,7 +166,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\GetEventsResponse',
+                        '\iBooking\Client\model\GetEventsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -206,7 +206,7 @@ class EventApi
      */
     public function getEventsAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\model\GetEventsResponse';
+        $returnType = '\iBooking\Client\model\GetEventsResponse';
         $request = $this->getEventsRequest();
 
         return $this->client

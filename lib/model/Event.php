@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\model;
+namespace iBooking\Client\model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \iBooking\Client\ObjectSerializer;
 
 /**
  * Event Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -64,9 +64,9 @@ class Event implements ModelInterface, ArrayAccess
 'capacity' => 'int',
 'available' => 'int',
 'members_only' => 'bool',
-'prices' => '\Swagger\Client\model\Price',
-'dates' => '\Swagger\Client\model\EventSpecifics[]',
-'studio' => '\Swagger\Client\model\Gym'    ];
+'prices' => '\iBooking\Client\model\Price',
+'dates' => '\iBooking\Client\model\EventSpecifics[]',
+'studio' => '\iBooking\Client\model\Gym'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -451,7 +451,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets prices
      *
-     * @return \Swagger\Client\model\Price
+     * @return \iBooking\Client\model\Price
      */
     public function getPrices()
     {
@@ -461,7 +461,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets prices
      *
-     * @param \Swagger\Client\model\Price $prices prices
+     * @param \iBooking\Client\model\Price $prices prices
      *
      * @return $this
      */
@@ -475,7 +475,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets dates
      *
-     * @return \Swagger\Client\model\EventSpecifics[]
+     * @return \iBooking\Client\model\EventSpecifics[]
      */
     public function getDates()
     {
@@ -485,7 +485,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets dates
      *
-     * @param \Swagger\Client\model\EventSpecifics[] $dates dates
+     * @param \iBooking\Client\model\EventSpecifics[] $dates dates
      *
      * @return $this
      */
@@ -499,7 +499,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets studio
      *
-     * @return \Swagger\Client\model\Gym
+     * @return \iBooking\Client\model\Gym
      */
     public function getStudio()
     {
@@ -509,7 +509,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets studio
      *
-     * @param \Swagger\Client\model\Gym $studio studio
+     * @param \iBooking\Client\model\Gym $studio studio
      *
      * @return $this
      */

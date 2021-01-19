@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\model;
+namespace iBooking\Client\model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \iBooking\Client\ObjectSerializer;
 
 /**
  * Activity Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class Activity implements ModelInterface, ArrayAccess
 'description' => 'string',
 'image' => 'string',
 'video' => 'string',
-'studio' => '\Swagger\Client\model\ActivityStudio'    ];
+'studio' => '\iBooking\Client\model\ActivityStudio'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -349,7 +349,7 @@ class Activity implements ModelInterface, ArrayAccess
     /**
      * Gets studio
      *
-     * @return \Swagger\Client\model\ActivityStudio
+     * @return \iBooking\Client\model\ActivityStudio
      */
     public function getStudio()
     {
@@ -359,7 +359,7 @@ class Activity implements ModelInterface, ArrayAccess
     /**
      * Sets studio
      *
-     * @param \Swagger\Client\model\ActivityStudio $studio studio
+     * @param \iBooking\Client\model\ActivityStudio $studio studio
      *
      * @return $this
      */

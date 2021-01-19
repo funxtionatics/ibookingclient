@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\model;
+namespace iBooking\Client\model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \iBooking\Client\ObjectSerializer;
 
 /**
  * GetGymsResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class GetGymsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'gyms' => '\Swagger\Client\model\Gym[]'    ];
+        'gyms' => '\iBooking\Client\model\Gym[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -199,7 +199,7 @@ class GetGymsResponse implements ModelInterface, ArrayAccess
     /**
      * Gets gyms
      *
-     * @return \Swagger\Client\model\Gym[]
+     * @return \iBooking\Client\model\Gym[]
      */
     public function getGyms()
     {
@@ -209,7 +209,7 @@ class GetGymsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets gyms
      *
-     * @param \Swagger\Client\model\Gym[] $gyms gyms
+     * @param \iBooking\Client\model\Gym[] $gyms gyms
      *
      * @return $this
      */
