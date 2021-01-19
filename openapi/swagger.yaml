@@ -15,6 +15,10 @@ tags:
     description: pulling in gyms
   - name: login
     description: handle login
+  - name: event
+    description: everything regarding events
+  - name: ResourceBooking
+    description: everything regarding ResourceBooking
 paths:
   /User/login:
     post:
@@ -50,7 +54,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/body'
+              properties:
+                token:
+                  type: string
       responses:
         "200":
           description: Success
@@ -147,6 +153,36 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      security:
+        - ApiKeyAuth: []
+  /Event/getEvents:
+    get:
+      tags:
+        - event
+      summary: Get events
+      operationId: getEvents
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEventsResponse'
+      security:
+        - ApiKeyAuth: []
+  /ResourceBooking/getActivities:
+    get:
+      tags:
+        - ResourceBooking
+      summary: Get activities
+      operationId: getActivities
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetActivitiesResponse'
       security:
         - ApiKeyAuth: []
 components:
@@ -378,10 +414,93 @@ components:
           type: string
         baseUrl:
           type: string
-    body:
+    GetEventsResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Event'
+    Event:
+      type: object
       properties:
-        token:
+        id:
+          type: integer
+          format: int64
+        categoryId:
+          type: integer
+          format: int64
+        name:
           type: string
+        description:
+          type: string
+        image:
+          type: string
+        capacity:
+          type: integer
+          format: int32
+        available:
+          type: integer
+          format: int32
+        membersOnly:
+          type: boolean
+        prices:
+          $ref: '#/components/schemas/Price'
+        dates:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventSpecifics'
+        studio:
+          $ref: '#/components/schemas/Gym'
+    Price:
+      type: object
+      properties:
+        all:
+          type: number
+          format: double
+          description: 'Price for both members and non-members. If used, events.prices.member and events.prices.notMember are not in use.'
+        member:
+          type: number
+          format: double
+          description: 'Price for members. If used, events.prices.all are not in use.'
+        notMember:
+          type: number
+          format: double
+          description: 'Price for non-members. If used, events.prices.all are not in use.'
+    EventSpecifics:
+      type: object
+      properties:
+        from:
+          type: string
+          format: date-time
+        to:
+          type: string
+          format: date-time
+        room:
+          type: string
+        instructor:
+          type: string
+    GetActivitiesResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Activity'
+    Activity:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        video:
+          type: string
+        studio:
+          type: object
+          properties:
+            id:
+              type: number
+            name:
+              type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

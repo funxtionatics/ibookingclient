@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace iBooking\Client;
+namespace Swagger\Client;
 
 /**
  * ObjectSerializer Class Doc Comment

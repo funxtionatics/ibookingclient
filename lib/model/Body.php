@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace iBooking\Client\model;
+namespace Swagger\Client\model;
 
 use \ArrayAccess;
-use iBooking\Client\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * Body Class Doc Comment

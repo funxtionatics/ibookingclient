@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginResponse
+ * ActivityStudio
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * LoginResponse Class Doc Comment
+ * ActivityStudio Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LoginResponse implements ModelInterface, ArrayAccess
+class ActivityStudio implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LoginResponse';
+    protected static $swaggerModelName = 'Activity_studio';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'auth_token' => 'string',
-'auth_token_expires' => 'string',
-'user' => '\Swagger\Client\model\UserInfoResponse'    ];
+        'id' => 'float',
+'name' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +65,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'auth_token' => null,
-'auth_token_expires' => null,
-'user' => null    ];
+        'id' => null,
+'name' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +95,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'auth_token' => 'authToken',
-'auth_token_expires' => 'authTokenExpires',
-'user' => 'user'    ];
+        'id' => 'id',
+'name' => 'name'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +104,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'auth_token' => 'setAuthToken',
-'auth_token_expires' => 'setAuthTokenExpires',
-'user' => 'setUser'    ];
+        'id' => 'setId',
+'name' => 'setName'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +113,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'auth_token' => 'getAuthToken',
-'auth_token_expires' => 'getAuthTokenExpires',
-'user' => 'getUser'    ];
+        'id' => 'getId',
+'name' => 'getName'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +174,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['auth_token'] = isset($data['auth_token']) ? $data['auth_token'] : null;
-        $this->container['auth_token_expires'] = isset($data['auth_token_expires']) ? $data['auth_token_expires'] : null;
-        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -209,73 +203,49 @@ class LoginResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets auth_token
+     * Gets id
      *
-     * @return string
+     * @return float
      */
-    public function getAuthToken()
+    public function getId()
     {
-        return $this->container['auth_token'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets auth_token
+     * Sets id
      *
-     * @param string $auth_token A token that identifies and authenticates the user.
+     * @param float $id id
      *
      * @return $this
      */
-    public function setAuthToken($auth_token)
+    public function setId($id)
     {
-        $this->container['auth_token'] = $auth_token;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets auth_token_expires
+     * Gets name
      *
      * @return string
      */
-    public function getAuthTokenExpires()
+    public function getName()
     {
-        return $this->container['auth_token_expires'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets auth_token_expires
+     * Sets name
      *
-     * @param string $auth_token_expires A timestamp in YYYY-MM-DD HH:MM:SS format stating when the authToken expires.
+     * @param string $name name
      *
      * @return $this
      */
-    public function setAuthTokenExpires($auth_token_expires)
+    public function setName($name)
     {
-        $this->container['auth_token_expires'] = $auth_token_expires;
-
-        return $this;
-    }
-
-    /**
-     * Gets user
-     *
-     * @return \Swagger\Client\model\UserInfoResponse
-     */
-    public function getUser()
-    {
-        return $this->container['user'];
-    }
-
-    /**
-     * Sets user
-     *
-     * @param \Swagger\Client\model\UserInfoResponse $user user
-     *
-     * @return $this
-     */
-    public function setUser($user)
-    {
-        $this->container['user'] = $user;
+        $this->container['name'] = $name;
 
         return $this;
     }

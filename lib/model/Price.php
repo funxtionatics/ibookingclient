@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginResponse
+ * Price
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * LoginResponse Class Doc Comment
+ * Price Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LoginResponse implements ModelInterface, ArrayAccess
+class Price implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LoginResponse';
+    protected static $swaggerModelName = 'Price';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,9 @@ class LoginResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'auth_token' => 'string',
-'auth_token_expires' => 'string',
-'user' => '\Swagger\Client\model\UserInfoResponse'    ];
+        'all' => 'double',
+'member' => 'double',
+'not_member' => 'double'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +66,9 @@ class LoginResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'auth_token' => null,
-'auth_token_expires' => null,
-'user' => null    ];
+        'all' => 'double',
+'member' => 'double',
+'not_member' => 'double'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +97,9 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'auth_token' => 'authToken',
-'auth_token_expires' => 'authTokenExpires',
-'user' => 'user'    ];
+        'all' => 'all',
+'member' => 'member',
+'not_member' => 'notMember'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +107,9 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'auth_token' => 'setAuthToken',
-'auth_token_expires' => 'setAuthTokenExpires',
-'user' => 'setUser'    ];
+        'all' => 'setAll',
+'member' => 'setMember',
+'not_member' => 'setNotMember'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +117,9 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'auth_token' => 'getAuthToken',
-'auth_token_expires' => 'getAuthTokenExpires',
-'user' => 'getUser'    ];
+        'all' => 'getAll',
+'member' => 'getMember',
+'not_member' => 'getNotMember'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +179,9 @@ class LoginResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['auth_token'] = isset($data['auth_token']) ? $data['auth_token'] : null;
-        $this->container['auth_token_expires'] = isset($data['auth_token_expires']) ? $data['auth_token_expires'] : null;
-        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['all'] = isset($data['all']) ? $data['all'] : null;
+        $this->container['member'] = isset($data['member']) ? $data['member'] : null;
+        $this->container['not_member'] = isset($data['not_member']) ? $data['not_member'] : null;
     }
 
     /**
@@ -209,73 +209,73 @@ class LoginResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets auth_token
+     * Gets all
      *
-     * @return string
+     * @return double
      */
-    public function getAuthToken()
+    public function getAll()
     {
-        return $this->container['auth_token'];
+        return $this->container['all'];
     }
 
     /**
-     * Sets auth_token
+     * Sets all
      *
-     * @param string $auth_token A token that identifies and authenticates the user.
+     * @param double $all Price for both members and non-members. If used, events.prices.member and events.prices.notMember are not in use.
      *
      * @return $this
      */
-    public function setAuthToken($auth_token)
+    public function setAll($all)
     {
-        $this->container['auth_token'] = $auth_token;
+        $this->container['all'] = $all;
 
         return $this;
     }
 
     /**
-     * Gets auth_token_expires
+     * Gets member
      *
-     * @return string
+     * @return double
      */
-    public function getAuthTokenExpires()
+    public function getMember()
     {
-        return $this->container['auth_token_expires'];
+        return $this->container['member'];
     }
 
     /**
-     * Sets auth_token_expires
+     * Sets member
      *
-     * @param string $auth_token_expires A timestamp in YYYY-MM-DD HH:MM:SS format stating when the authToken expires.
+     * @param double $member Price for members. If used, events.prices.all are not in use.
      *
      * @return $this
      */
-    public function setAuthTokenExpires($auth_token_expires)
+    public function setMember($member)
     {
-        $this->container['auth_token_expires'] = $auth_token_expires;
+        $this->container['member'] = $member;
 
         return $this;
     }
 
     /**
-     * Gets user
+     * Gets not_member
      *
-     * @return \Swagger\Client\model\UserInfoResponse
+     * @return double
      */
-    public function getUser()
+    public function getNotMember()
     {
-        return $this->container['user'];
+        return $this->container['not_member'];
     }
 
     /**
-     * Sets user
+     * Sets not_member
      *
-     * @param \Swagger\Client\model\UserInfoResponse $user user
+     * @param double $not_member Price for non-members. If used, events.prices.all are not in use.
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setNotMember($not_member)
     {
-        $this->container['user'] = $user;
+        $this->container['not_member'] = $not_member;
 
         return $this;
     }

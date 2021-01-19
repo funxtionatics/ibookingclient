@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginResponse
+ * EventSpecifics
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * LoginResponse Class Doc Comment
+ * EventSpecifics Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LoginResponse implements ModelInterface, ArrayAccess
+class EventSpecifics implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LoginResponse';
+    protected static $swaggerModelName = 'EventSpecifics';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,10 @@ class LoginResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'auth_token' => 'string',
-'auth_token_expires' => 'string',
-'user' => '\Swagger\Client\model\UserInfoResponse'    ];
+        'from' => '\DateTime',
+'to' => '\DateTime',
+'room' => 'string',
+'instructor' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +67,10 @@ class LoginResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'auth_token' => null,
-'auth_token_expires' => null,
-'user' => null    ];
+        'from' => 'date-time',
+'to' => 'date-time',
+'room' => null,
+'instructor' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +99,10 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'auth_token' => 'authToken',
-'auth_token_expires' => 'authTokenExpires',
-'user' => 'user'    ];
+        'from' => 'from',
+'to' => 'to',
+'room' => 'room',
+'instructor' => 'instructor'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +110,10 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'auth_token' => 'setAuthToken',
-'auth_token_expires' => 'setAuthTokenExpires',
-'user' => 'setUser'    ];
+        'from' => 'setFrom',
+'to' => 'setTo',
+'room' => 'setRoom',
+'instructor' => 'setInstructor'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +121,10 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'auth_token' => 'getAuthToken',
-'auth_token_expires' => 'getAuthTokenExpires',
-'user' => 'getUser'    ];
+        'from' => 'getFrom',
+'to' => 'getTo',
+'room' => 'getRoom',
+'instructor' => 'getInstructor'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +184,10 @@ class LoginResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['auth_token'] = isset($data['auth_token']) ? $data['auth_token'] : null;
-        $this->container['auth_token_expires'] = isset($data['auth_token_expires']) ? $data['auth_token_expires'] : null;
-        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
+        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
+        $this->container['room'] = isset($data['room']) ? $data['room'] : null;
+        $this->container['instructor'] = isset($data['instructor']) ? $data['instructor'] : null;
     }
 
     /**
@@ -209,73 +215,97 @@ class LoginResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets auth_token
+     * Gets from
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getAuthToken()
+    public function getFrom()
     {
-        return $this->container['auth_token'];
+        return $this->container['from'];
     }
 
     /**
-     * Sets auth_token
+     * Sets from
      *
-     * @param string $auth_token A token that identifies and authenticates the user.
+     * @param \DateTime $from from
      *
      * @return $this
      */
-    public function setAuthToken($auth_token)
+    public function setFrom($from)
     {
-        $this->container['auth_token'] = $auth_token;
+        $this->container['from'] = $from;
 
         return $this;
     }
 
     /**
-     * Gets auth_token_expires
+     * Gets to
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getAuthTokenExpires()
+    public function getTo()
     {
-        return $this->container['auth_token_expires'];
+        return $this->container['to'];
     }
 
     /**
-     * Sets auth_token_expires
+     * Sets to
      *
-     * @param string $auth_token_expires A timestamp in YYYY-MM-DD HH:MM:SS format stating when the authToken expires.
+     * @param \DateTime $to to
      *
      * @return $this
      */
-    public function setAuthTokenExpires($auth_token_expires)
+    public function setTo($to)
     {
-        $this->container['auth_token_expires'] = $auth_token_expires;
+        $this->container['to'] = $to;
 
         return $this;
     }
 
     /**
-     * Gets user
+     * Gets room
      *
-     * @return \Swagger\Client\model\UserInfoResponse
+     * @return string
      */
-    public function getUser()
+    public function getRoom()
     {
-        return $this->container['user'];
+        return $this->container['room'];
     }
 
     /**
-     * Sets user
+     * Sets room
      *
-     * @param \Swagger\Client\model\UserInfoResponse $user user
+     * @param string $room room
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setRoom($room)
     {
-        $this->container['user'] = $user;
+        $this->container['room'] = $room;
+
+        return $this;
+    }
+
+    /**
+     * Gets instructor
+     *
+     * @return string
+     */
+    public function getInstructor()
+    {
+        return $this->container['instructor'];
+    }
+
+    /**
+     * Sets instructor
+     *
+     * @param string $instructor instructor
+     *
+     * @return $this
+     */
+    public function setInstructor($instructor)
+    {
+        $this->container['instructor'] = $instructor;
 
         return $this;
     }

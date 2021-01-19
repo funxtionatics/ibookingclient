@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace iBooking\Client\model;
+namespace Swagger\Client\model;
 
 use \ArrayAccess;
-use iBooking\Client\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * UserInfoResponse Class Doc Comment
@@ -67,11 +67,11 @@ class UserInfoResponse implements ModelInterface, ArrayAccess
 'cardnumber' => 'string',
 'customer_number' => 'int',
 'studio' => 'int',
-'contract' => '\iBooking\Client\model\Contract',
+'contract' => '\Swagger\Client\model\Contract',
 'noshow_count' => 'int',
 'avtalegiro_status' => 'string',
 'date_of_birth' => '\DateTime',
-'address' => '\iBooking\Client\model\Address',
+'address' => '\Swagger\Client\model\Address',
 'has_password' => 'bool'    ];
 
     /**
@@ -586,7 +586,7 @@ self::AVTALEGIRO_STATUS_UNKOWN,        ];
     /**
      * Gets contract
      *
-     * @return \iBooking\Client\model\Contract
+     * @return \Swagger\Client\model\Contract
      */
     public function getContract()
     {
@@ -596,7 +596,7 @@ self::AVTALEGIRO_STATUS_UNKOWN,        ];
     /**
      * Sets contract
      *
-     * @param \iBooking\Client\model\Contract $contract contract
+     * @param \Swagger\Client\model\Contract $contract contract
      *
      * @return $this
      */
@@ -691,7 +691,7 @@ self::AVTALEGIRO_STATUS_UNKOWN,        ];
     /**
      * Gets address
      *
-     * @return \iBooking\Client\model\Address
+     * @return \Swagger\Client\model\Address
      */
     public function getAddress()
     {
@@ -701,7 +701,7 @@ self::AVTALEGIRO_STATUS_UNKOWN,        ];
     /**
      * Sets address
      *
-     * @param \iBooking\Client\model\Address $address address
+     * @param \Swagger\Client\model\Address $address address
      *
      * @return $this
      */

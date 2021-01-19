@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace iBooking\Client\iBookingApi;
+namespace Swagger\Client\iBookingApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,10 +33,10 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use iBooking\Client\ApiException;
-use iBooking\Client\Configuration;
-use iBooking\Client\HeaderSelector;
-use iBooking\Client\ObjectSerializer;
+use Swagger\Client\ApiException;
+use Swagger\Client\Configuration;
+use Swagger\Client\HeaderSelector;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * MembersApi Class Doc Comment
@@ -92,9 +92,9 @@ class MembersApi
      * This method will list all the members in the same chain as the current company.
      *
      *
-     * @return \iBooking\Client\model\GetMembersResponse
-     *@throws \InvalidArgumentException
-     * @throws \iBooking\Client\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\model\GetMembersResponse
      */
     public function getMembers()
     {
@@ -108,13 +108,13 @@ class MembersApi
      * This method will list all the members in the same chain as the current company.
      *
      *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\model\GetMembersResponse, HTTP status code, HTTP response headers (array of strings)
-     *@throws \InvalidArgumentException
-     * @throws \iBooking\Client\ApiException on non-2xx response
      */
     public function getMembersWithHttpInfo()
     {
-        $returnType = '\iBooking\Client\model\GetMembersResponse';
+        $returnType = '\Swagger\Client\model\GetMembersResponse';
         $request = $this->getMembersRequest();
 
         try {
@@ -222,7 +222,7 @@ class MembersApi
      */
     public function getMembersAsyncWithHttpInfo()
     {
-        $returnType = '\iBooking\Client\model\GetMembersResponse';
+        $returnType = '\Swagger\Client\model\GetMembersResponse';
         $request = $this->getMembersRequest();
 
         return $this->client
@@ -358,9 +358,9 @@ class MembersApi
      * @param  string $user_id Either userId of username (optional)
      * @param  string $username Either userId of username (optional)
      *
-     * @return \iBooking\Client\model\UserInfoResponse
-     *@throws \InvalidArgumentException
-     * @throws \iBooking\Client\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\model\UserInfoResponse
      */
     public function getUserInfo($user_id = null, $username = null)
     {
@@ -376,9 +376,9 @@ class MembersApi
      * @param  string $user_id Either userId of username (optional)
      * @param  string $username Either userId of username (optional)
      *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\model\UserInfoResponse, HTTP status code, HTTP response headers (array of strings)
-     *@throws \InvalidArgumentException
-     * @throws \iBooking\Client\ApiException on non-2xx response
      */
     public function getUserInfoWithHttpInfo($user_id = null, $username = null)
     {

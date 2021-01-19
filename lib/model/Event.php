@@ -1,6 +1,6 @@
 <?php
 /**
- * Contract
+ * Event
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Contract Class Doc Comment
+ * Event Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Contract implements ModelInterface, ArrayAccess
+class Event implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Contract implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Contract';
+    protected static $swaggerModelName = 'Event';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,10 +56,17 @@ class Contract implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'offering_code' => 'int',
+        'id' => 'int',
+'category_id' => 'int',
 'name' => 'string',
-'start' => '\DateTime',
-'end' => '\DateTime'    ];
+'description' => 'string',
+'image' => 'string',
+'capacity' => 'int',
+'available' => 'int',
+'members_only' => 'bool',
+'prices' => '\Swagger\Client\model\Price',
+'dates' => '\Swagger\Client\model\EventSpecifics[]',
+'studio' => '\Swagger\Client\model\Gym'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,10 +74,17 @@ class Contract implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'offering_code' => 'int64',
+        'id' => 'int64',
+'category_id' => 'int64',
 'name' => null,
-'start' => 'date',
-'end' => 'date'    ];
+'description' => null,
+'image' => null,
+'capacity' => 'int32',
+'available' => 'int32',
+'members_only' => null,
+'prices' => null,
+'dates' => null,
+'studio' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -99,10 +113,17 @@ class Contract implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'offering_code' => 'offeringCode',
+        'id' => 'id',
+'category_id' => 'categoryId',
 'name' => 'name',
-'start' => 'start',
-'end' => 'end'    ];
+'description' => 'description',
+'image' => 'image',
+'capacity' => 'capacity',
+'available' => 'available',
+'members_only' => 'membersOnly',
+'prices' => 'prices',
+'dates' => 'dates',
+'studio' => 'studio'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -110,10 +131,17 @@ class Contract implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'offering_code' => 'setOfferingCode',
+        'id' => 'setId',
+'category_id' => 'setCategoryId',
 'name' => 'setName',
-'start' => 'setStart',
-'end' => 'setEnd'    ];
+'description' => 'setDescription',
+'image' => 'setImage',
+'capacity' => 'setCapacity',
+'available' => 'setAvailable',
+'members_only' => 'setMembersOnly',
+'prices' => 'setPrices',
+'dates' => 'setDates',
+'studio' => 'setStudio'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -121,10 +149,17 @@ class Contract implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'offering_code' => 'getOfferingCode',
+        'id' => 'getId',
+'category_id' => 'getCategoryId',
 'name' => 'getName',
-'start' => 'getStart',
-'end' => 'getEnd'    ];
+'description' => 'getDescription',
+'image' => 'getImage',
+'capacity' => 'getCapacity',
+'available' => 'getAvailable',
+'members_only' => 'getMembersOnly',
+'prices' => 'getPrices',
+'dates' => 'getDates',
+'studio' => 'getStudio'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -184,10 +219,17 @@ class Contract implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['offering_code'] = isset($data['offering_code']) ? $data['offering_code'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['category_id'] = isset($data['category_id']) ? $data['category_id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['start'] = isset($data['start']) ? $data['start'] : null;
-        $this->container['end'] = isset($data['end']) ? $data['end'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['image'] = isset($data['image']) ? $data['image'] : null;
+        $this->container['capacity'] = isset($data['capacity']) ? $data['capacity'] : null;
+        $this->container['available'] = isset($data['available']) ? $data['available'] : null;
+        $this->container['members_only'] = isset($data['members_only']) ? $data['members_only'] : null;
+        $this->container['prices'] = isset($data['prices']) ? $data['prices'] : null;
+        $this->container['dates'] = isset($data['dates']) ? $data['dates'] : null;
+        $this->container['studio'] = isset($data['studio']) ? $data['studio'] : null;
     }
 
     /**
@@ -215,25 +257,49 @@ class Contract implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets offering_code
+     * Gets id
      *
      * @return int
      */
-    public function getOfferingCode()
+    public function getId()
     {
-        return $this->container['offering_code'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets offering_code
+     * Sets id
      *
-     * @param int $offering_code offering_code
+     * @param int $id id
      *
      * @return $this
      */
-    public function setOfferingCode($offering_code)
+    public function setId($id)
     {
-        $this->container['offering_code'] = $offering_code;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets category_id
+     *
+     * @return int
+     */
+    public function getCategoryId()
+    {
+        return $this->container['category_id'];
+    }
+
+    /**
+     * Sets category_id
+     *
+     * @param int $category_id category_id
+     *
+     * @return $this
+     */
+    public function setCategoryId($category_id)
+    {
+        $this->container['category_id'] = $category_id;
 
         return $this;
     }
@@ -263,49 +329,193 @@ class Contract implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets start
+     * Gets description
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getStart()
+    public function getDescription()
     {
-        return $this->container['start'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets start
+     * Sets description
      *
-     * @param \DateTime $start Format: YYYY-MM-DD.
+     * @param string $description description
      *
      * @return $this
      */
-    public function setStart($start)
+    public function setDescription($description)
     {
-        $this->container['start'] = $start;
+        $this->container['description'] = $description;
 
         return $this;
     }
 
     /**
-     * Gets end
+     * Gets image
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getEnd()
+    public function getImage()
     {
-        return $this->container['end'];
+        return $this->container['image'];
     }
 
     /**
-     * Sets end
+     * Sets image
      *
-     * @param \DateTime $end Format: YYYY-MM-DD.
+     * @param string $image image
      *
      * @return $this
      */
-    public function setEnd($end)
+    public function setImage($image)
     {
-        $this->container['end'] = $end;
+        $this->container['image'] = $image;
+
+        return $this;
+    }
+
+    /**
+     * Gets capacity
+     *
+     * @return int
+     */
+    public function getCapacity()
+    {
+        return $this->container['capacity'];
+    }
+
+    /**
+     * Sets capacity
+     *
+     * @param int $capacity capacity
+     *
+     * @return $this
+     */
+    public function setCapacity($capacity)
+    {
+        $this->container['capacity'] = $capacity;
+
+        return $this;
+    }
+
+    /**
+     * Gets available
+     *
+     * @return int
+     */
+    public function getAvailable()
+    {
+        return $this->container['available'];
+    }
+
+    /**
+     * Sets available
+     *
+     * @param int $available available
+     *
+     * @return $this
+     */
+    public function setAvailable($available)
+    {
+        $this->container['available'] = $available;
+
+        return $this;
+    }
+
+    /**
+     * Gets members_only
+     *
+     * @return bool
+     */
+    public function getMembersOnly()
+    {
+        return $this->container['members_only'];
+    }
+
+    /**
+     * Sets members_only
+     *
+     * @param bool $members_only members_only
+     *
+     * @return $this
+     */
+    public function setMembersOnly($members_only)
+    {
+        $this->container['members_only'] = $members_only;
+
+        return $this;
+    }
+
+    /**
+     * Gets prices
+     *
+     * @return \Swagger\Client\model\Price
+     */
+    public function getPrices()
+    {
+        return $this->container['prices'];
+    }
+
+    /**
+     * Sets prices
+     *
+     * @param \Swagger\Client\model\Price $prices prices
+     *
+     * @return $this
+     */
+    public function setPrices($prices)
+    {
+        $this->container['prices'] = $prices;
+
+        return $this;
+    }
+
+    /**
+     * Gets dates
+     *
+     * @return \Swagger\Client\model\EventSpecifics[]
+     */
+    public function getDates()
+    {
+        return $this->container['dates'];
+    }
+
+    /**
+     * Sets dates
+     *
+     * @param \Swagger\Client\model\EventSpecifics[] $dates dates
+     *
+     * @return $this
+     */
+    public function setDates($dates)
+    {
+        $this->container['dates'] = $dates;
+
+        return $this;
+    }
+
+    /**
+     * Gets studio
+     *
+     * @return \Swagger\Client\model\Gym
+     */
+    public function getStudio()
+    {
+        return $this->container['studio'];
+    }
+
+    /**
+     * Sets studio
+     *
+     * @param \Swagger\Client\model\Gym $studio studio
+     *
+     * @return $this
+     */
+    public function setStudio($studio)
+    {
+        $this->container['studio'] = $studio;
 
         return $this;
     }

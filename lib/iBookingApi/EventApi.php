@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginApi
+ * EventApi
  * PHP version 5
  *
  * @category Class
@@ -39,14 +39,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * LoginApi Class Doc Comment
+ * EventApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LoginApi
+class EventApi
 {
     /**
      * @var ClientInterface
@@ -87,37 +87,35 @@ class LoginApi
     }
 
     /**
-     * Operation login
+     * Operation getEvents
      *
-     * This method will upon success return a token that must be used for further communication with the API.
+     * Get events
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\model\LoginResponse
+     * @return \Swagger\Client\model\GetEventsResponse
      */
-    public function login($body)
+    public function getEvents()
     {
-        list($response) = $this->loginWithHttpInfo($body);
+        list($response) = $this->getEventsWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation loginWithHttpInfo
+     * Operation getEventsWithHttpInfo
      *
-     * This method will upon success return a token that must be used for further communication with the API.
+     * Get events
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\model\LoginResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\model\GetEventsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginWithHttpInfo($body)
+    public function getEventsWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\model\LoginResponse';
-        $request = $this->loginRequest($body);
+        $returnType = '\Swagger\Client\model\GetEventsResponse';
+        $request = $this->getEventsRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -168,7 +166,7 @@ class LoginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\LoginResponse',
+                        '\Swagger\Client\model\GetEventsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -179,18 +177,17 @@ class LoginApi
     }
 
     /**
-     * Operation loginAsync
+     * Operation getEventsAsync
      *
-     * This method will upon success return a token that must be used for further communication with the API.
+     * Get events
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginAsync($body)
+    public function getEventsAsync()
     {
-        return $this->loginAsyncWithHttpInfo($body)
+        return $this->getEventsAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,19 +196,18 @@ class LoginApi
     }
 
     /**
-     * Operation loginAsyncWithHttpInfo
+     * Operation getEventsAsyncWithHttpInfo
      *
-     * This method will upon success return a token that must be used for further communication with the API.
+     * Get events
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginAsyncWithHttpInfo($body)
+    public function getEventsAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\model\LoginResponse';
-        $request = $this->loginRequest($body);
+        $returnType = '\Swagger\Client\model\GetEventsResponse';
+        $request = $this->getEventsRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,23 +247,16 @@ class LoginApi
     }
 
     /**
-     * Create request for operation 'login'
+     * Create request for operation 'getEvents'
      *
-     * @param  \Swagger\Client\model\LoginRequestParameters $body LoginRequestParameters object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginRequest($body)
+    protected function getEventsRequest()
     {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling login'
-            );
-        }
 
-        $resourcePath = '/User/login';
+        $resourcePath = '/Event/getEvents';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -278,9 +267,6 @@ class LoginApi
 
         // body params
         $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -289,221 +275,7 @@ class LoginApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation logout
-     *
-     * Invalidates the token provided, and resets any auth session used for other iBooking services.
-     *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function logout($body = null)
-    {
-        $this->logoutWithHttpInfo($body);
-    }
-
-    /**
-     * Operation logoutWithHttpInfo
-     *
-     * Invalidates the token provided, and resets any auth session used for other iBooking services.
-     *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function logoutWithHttpInfo($body = null)
-    {
-        $returnType = '';
-        $request = $this->logoutRequest($body);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation logoutAsync
-     *
-     * Invalidates the token provided, and resets any auth session used for other iBooking services.
-     *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function logoutAsync($body = null)
-    {
-        return $this->logoutAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation logoutAsyncWithHttpInfo
-     *
-     * Invalidates the token provided, and resets any auth session used for other iBooking services.
-     *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function logoutAsyncWithHttpInfo($body = null)
-    {
-        $returnType = '';
-        $request = $this->logoutRequest($body);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'logout'
-     *
-     * @param  \Swagger\Client\model\Body $body Token to invalidate (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function logoutRequest($body = null)
-    {
-
-        $resourcePath = '/User/logout';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
                 []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                ['application/json']
             );
         }
 
@@ -555,7 +327,7 @@ class LoginApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

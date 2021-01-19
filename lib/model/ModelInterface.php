@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace iBooking\Client\model;
+namespace Swagger\Client\model;
 
 /**
  * Interface abstracting model access.

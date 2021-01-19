@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace iBooking\Client\model;
+namespace Swagger\Client\model;
 
 use \ArrayAccess;
-use iBooking\Client\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * GetGymsResponse Class Doc Comment
@@ -199,7 +199,7 @@ class GetGymsResponse implements ModelInterface, ArrayAccess
     /**
      * Gets gyms
      *
-     * @return \iBooking\Client\model\Gym[]
+     * @return \Swagger\Client\model\Gym[]
      */
     public function getGyms()
     {
@@ -209,7 +209,7 @@ class GetGymsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets gyms
      *
-     * @param \iBooking\Client\model\Gym[] $gyms gyms
+     * @param \Swagger\Client\model\Gym[] $gyms gyms
      *
      * @return $this
      */

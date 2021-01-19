@@ -1,6 +1,6 @@
 <?php
 /**
- * GymApi
+ * GymsApi
  * PHP version 5
  *
  * @category Class
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace iBooking\Client\iBookingApi;
+namespace Swagger\Client\iBookingApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,20 +33,20 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use iBooking\Client\ApiException;
-use iBooking\Client\Configuration;
-use iBooking\Client\HeaderSelector;
-use iBooking\Client\ObjectSerializer;
+use Swagger\Client\ApiException;
+use Swagger\Client\Configuration;
+use Swagger\Client\HeaderSelector;
+use Swagger\Client\ObjectSerializer;
 
 /**
- * GymApi Class Doc Comment
+ * GymsApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GymApi
+class GymsApi
 {
     /**
      * @var ClientInterface
@@ -92,9 +92,9 @@ class GymApi
      * Get gyms
      *
      *
-     * @return \iBooking\Client\model\GetGymsResponse
-     *@throws \InvalidArgumentException
-     * @throws \iBooking\Client\ApiException on non-2xx response
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\model\GetGymsResponse
      */
     public function getGyms()
     {
@@ -108,13 +108,13 @@ class GymApi
      * Get gyms
      *
      *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\model\GetGymsResponse, HTTP status code, HTTP response headers (array of strings)
-     *@throws \InvalidArgumentException
-     * @throws \iBooking\Client\ApiException on non-2xx response
      */
     public function getGymsWithHttpInfo()
     {
-        $returnType = '\iBooking\Client\model\GetGymsResponse';
+        $returnType = '\Swagger\Client\model\GetGymsResponse';
         $request = $this->getGymsRequest();
 
         try {
@@ -166,7 +166,7 @@ class GymApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\iBooking\Client\model\GetGymsResponse',
+                        '\Swagger\Client\model\GetGymsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -214,7 +214,7 @@ class GymApi
      */
     public function getGymsAsyncWithHttpInfo()
     {
-        $returnType = '\iBooking\Client\model\GetGymsResponse';
+        $returnType = '\Swagger\Client\model\GetGymsResponse';
         $request = $this->getGymsRequest();
 
         return $this->client

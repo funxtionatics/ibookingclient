@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace iBooking\Client\model;
+namespace Swagger\Client\model;
 
 use \ArrayAccess;
-use iBooking\Client\ObjectSerializer;
+use \Swagger\Client\ObjectSerializer;
 
 /**
  * GetMembersResponse Class Doc Comment
@@ -295,7 +295,7 @@ class GetMembersResponse implements ModelInterface, ArrayAccess
     /**
      * Gets members
      *
-     * @return \iBooking\Client\model\Member[]
+     * @return \Swagger\Client\model\Member[]
      */
     public function getMembers()
     {
@@ -305,7 +305,7 @@ class GetMembersResponse implements ModelInterface, ArrayAccess
     /**
      * Sets members
      *
-     * @param \iBooking\Client\model\Member[] $members members
+     * @param \Swagger\Client\model\Member[] $members members
      *
      * @return $this
      */
@@ -319,7 +319,7 @@ class GetMembersResponse implements ModelInterface, ArrayAccess
     /**
      * Gets gym
      *
-     * @return \iBooking\Client\model\Gym
+     * @return \Swagger\Client\model\Gym
      */
     public function getGym()
     {
@@ -329,7 +329,7 @@ class GetMembersResponse implements ModelInterface, ArrayAccess
     /**
      * Sets gym
      *
-     * @param \iBooking\Client\model\Gym $gym gym
+     * @param \Swagger\Client\model\Gym $gym gym
      *
      * @return $this
      */
@@ -391,7 +391,7 @@ class GetMembersResponse implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \iBooking\Client\model\Address
+     * @return \Swagger\Client\model\Address
      */
     public function getAddress()
     {
@@ -401,7 +401,7 @@ class GetMembersResponse implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \iBooking\Client\model\Address $address address
+     * @param \Swagger\Client\model\Address $address address
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ class GetMembersResponse implements ModelInterface, ArrayAccess
     /**
      * Gets has_accepted_communication
      *
-     * @return \iBooking\Client\model\CommunicationChannels
+     * @return \Swagger\Client\model\CommunicationChannels
      */
     public function getHasAcceptedCommunication()
     {
@@ -545,7 +545,7 @@ class GetMembersResponse implements ModelInterface, ArrayAccess
     /**
      * Sets has_accepted_communication
      *
-     * @param \iBooking\Client\model\CommunicationChannels $has_accepted_communication has_accepted_communication
+     * @param \Swagger\Client\model\CommunicationChannels $has_accepted_communication has_accepted_communication
      *
      * @return $this
      */

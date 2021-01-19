@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginResponse
+ * Activity
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * LoginResponse Class Doc Comment
+ * Activity Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LoginResponse implements ModelInterface, ArrayAccess
+class Activity implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LoginResponse';
+    protected static $swaggerModelName = 'Activity';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,12 @@ class LoginResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'auth_token' => 'string',
-'auth_token_expires' => 'string',
-'user' => '\Swagger\Client\model\UserInfoResponse'    ];
+        'id' => 'float',
+'name' => 'string',
+'description' => 'string',
+'image' => 'string',
+'video' => 'string',
+'studio' => '\Swagger\Client\model\ActivityStudio'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +69,12 @@ class LoginResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'auth_token' => null,
-'auth_token_expires' => null,
-'user' => null    ];
+        'id' => null,
+'name' => null,
+'description' => null,
+'image' => null,
+'video' => null,
+'studio' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +103,12 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'auth_token' => 'authToken',
-'auth_token_expires' => 'authTokenExpires',
-'user' => 'user'    ];
+        'id' => 'id',
+'name' => 'name',
+'description' => 'description',
+'image' => 'image',
+'video' => 'video',
+'studio' => 'studio'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +116,12 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'auth_token' => 'setAuthToken',
-'auth_token_expires' => 'setAuthTokenExpires',
-'user' => 'setUser'    ];
+        'id' => 'setId',
+'name' => 'setName',
+'description' => 'setDescription',
+'image' => 'setImage',
+'video' => 'setVideo',
+'studio' => 'setStudio'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +129,12 @@ class LoginResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'auth_token' => 'getAuthToken',
-'auth_token_expires' => 'getAuthTokenExpires',
-'user' => 'getUser'    ];
+        'id' => 'getId',
+'name' => 'getName',
+'description' => 'getDescription',
+'image' => 'getImage',
+'video' => 'getVideo',
+'studio' => 'getStudio'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +194,12 @@ class LoginResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['auth_token'] = isset($data['auth_token']) ? $data['auth_token'] : null;
-        $this->container['auth_token_expires'] = isset($data['auth_token_expires']) ? $data['auth_token_expires'] : null;
-        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['image'] = isset($data['image']) ? $data['image'] : null;
+        $this->container['video'] = isset($data['video']) ? $data['video'] : null;
+        $this->container['studio'] = isset($data['studio']) ? $data['studio'] : null;
     }
 
     /**
@@ -209,73 +227,145 @@ class LoginResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets auth_token
+     * Gets id
      *
-     * @return string
+     * @return float
      */
-    public function getAuthToken()
+    public function getId()
     {
-        return $this->container['auth_token'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets auth_token
+     * Sets id
      *
-     * @param string $auth_token A token that identifies and authenticates the user.
+     * @param float $id id
      *
      * @return $this
      */
-    public function setAuthToken($auth_token)
+    public function setId($id)
     {
-        $this->container['auth_token'] = $auth_token;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets auth_token_expires
+     * Gets name
      *
      * @return string
      */
-    public function getAuthTokenExpires()
+    public function getName()
     {
-        return $this->container['auth_token_expires'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets auth_token_expires
+     * Sets name
      *
-     * @param string $auth_token_expires A timestamp in YYYY-MM-DD HH:MM:SS format stating when the authToken expires.
+     * @param string $name name
      *
      * @return $this
      */
-    public function setAuthTokenExpires($auth_token_expires)
+    public function setName($name)
     {
-        $this->container['auth_token_expires'] = $auth_token_expires;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets user
+     * Gets description
      *
-     * @return \Swagger\Client\model\UserInfoResponse
+     * @return string
      */
-    public function getUser()
+    public function getDescription()
     {
-        return $this->container['user'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets user
+     * Sets description
      *
-     * @param \Swagger\Client\model\UserInfoResponse $user user
+     * @param string $description description
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setDescription($description)
     {
-        $this->container['user'] = $user;
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->container['image'];
+    }
+
+    /**
+     * Sets image
+     *
+     * @param string $image image
+     *
+     * @return $this
+     */
+    public function setImage($image)
+    {
+        $this->container['image'] = $image;
+
+        return $this;
+    }
+
+    /**
+     * Gets video
+     *
+     * @return string
+     */
+    public function getVideo()
+    {
+        return $this->container['video'];
+    }
+
+    /**
+     * Sets video
+     *
+     * @param string $video video
+     *
+     * @return $this
+     */
+    public function setVideo($video)
+    {
+        $this->container['video'] = $video;
+
+        return $this;
+    }
+
+    /**
+     * Gets studio
+     *
+     * @return \Swagger\Client\model\ActivityStudio
+     */
+    public function getStudio()
+    {
+        return $this->container['studio'];
+    }
+
+    /**
+     * Sets studio
+     *
+     * @param \Swagger\Client\model\ActivityStudio $studio studio
+     *
+     * @return $this
+     */
+    public function setStudio($studio)
+    {
+        $this->container['studio'] = $studio;
 
         return $this;
     }
