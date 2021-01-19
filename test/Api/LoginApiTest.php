@@ -25,11 +25,11 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace iBooking\Client\Api;
+namespace Swagger\Client;
 
-use iBooking\Client\Configuration;
-use iBooking\Client\ApiException;
-use iBooking\Client\ObjectSerializer;
+use Swagger\Client\Configuration;
+use Swagger\Client\ApiException;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * LoginApiTest Class Doc Comment
