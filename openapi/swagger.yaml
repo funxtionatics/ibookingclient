@@ -131,7 +131,7 @@ paths:
   /Chain/gyms:
     get:
       tags:
-        - gym
+        - gyms
       summary: Get gyms
       operationId: getGyms
       responses:
