@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -42,7 +42,7 @@ use iBooking\Client\ObjectSerializer;
  * MembersApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,9 +92,9 @@ class MembersApi
      * This method will list all the members in the same chain as the current company.
      *
      *
-     * @return \iBooking\Client\model\GetMembersResponse
-     *@throws \InvalidArgumentException
      * @throws \iBooking\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \iBooking\Client\model\GetMembersResponse
      */
     public function getMembers()
     {
@@ -108,9 +108,9 @@ class MembersApi
      * This method will list all the members in the same chain as the current company.
      *
      *
-     * @return array of \Swagger\Client\model\GetMembersResponse, HTTP status code, HTTP response headers (array of strings)
-     *@throws \InvalidArgumentException
      * @throws \iBooking\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \iBooking\Client\model\GetMembersResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMembersWithHttpInfo()
     {
@@ -166,7 +166,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\GetMembersResponse',
+                        '\iBooking\Client\model\GetMembersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -174,7 +174,7 @@ class MembersApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\ErrorResponse',
+                        '\iBooking\Client\model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -182,7 +182,7 @@ class MembersApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\ErrorResponse',
+                        '\iBooking\Client\model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -358,9 +358,9 @@ class MembersApi
      * @param  string $user_id Either userId of username (optional)
      * @param  string $username Either userId of username (optional)
      *
-     * @return \iBooking\Client\model\UserInfoResponse
-     *@throws \InvalidArgumentException
      * @throws \iBooking\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \iBooking\Client\model\UserInfoResponse
      */
     public function getUserInfo($user_id = null, $username = null)
     {
@@ -376,13 +376,13 @@ class MembersApi
      * @param  string $user_id Either userId of username (optional)
      * @param  string $username Either userId of username (optional)
      *
-     * @return array of \Swagger\Client\model\UserInfoResponse, HTTP status code, HTTP response headers (array of strings)
-     *@throws \InvalidArgumentException
      * @throws \iBooking\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \iBooking\Client\model\UserInfoResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserInfoWithHttpInfo($user_id = null, $username = null)
     {
-        $returnType = '\Swagger\Client\model\UserInfoResponse';
+        $returnType = '\iBooking\Client\model\UserInfoResponse';
         $request = $this->getUserInfoRequest($user_id, $username);
 
         try {
@@ -434,7 +434,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\UserInfoResponse',
+                        '\iBooking\Client\model\UserInfoResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -442,7 +442,7 @@ class MembersApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\ErrorResponse',
+                        '\iBooking\Client\model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -450,7 +450,7 @@ class MembersApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\model\ErrorResponse',
+                        '\iBooking\Client\model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -494,7 +494,7 @@ class MembersApi
      */
     public function getUserInfoAsyncWithHttpInfo($user_id = null, $username = null)
     {
-        $returnType = '\Swagger\Client\model\UserInfoResponse';
+        $returnType = '\iBooking\Client\model\UserInfoResponse';
         $request = $this->getUserInfoRequest($user_id, $username);
 
         return $this->client

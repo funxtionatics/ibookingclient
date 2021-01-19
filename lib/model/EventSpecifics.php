@@ -1,6 +1,6 @@
 <?php
 /**
- * Gym
+ * EventSpecifics
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \iBooking\Client\ObjectSerializer;
 
 /**
- * Gym Class Doc Comment
+ * EventSpecifics Class Doc Comment
  *
  * @category Class
  * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Gym implements ModelInterface, ArrayAccess
+class EventSpecifics implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Gym implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Gym';
+    protected static $swaggerModelName = 'EventSpecifics';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,10 @@ class Gym implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'company_id' => 'int',
-'studio_id' => 'int',
-'company_name' => 'string',
-'studio_name' => 'string',
-'base_url' => 'string'    ];
+        'from' => '\DateTime',
+'to' => '\DateTime',
+'room' => 'string',
+'instructor' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +67,10 @@ class Gym implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'company_id' => 'int64',
-'studio_id' => 'int64',
-'company_name' => null,
-'studio_name' => null,
-'base_url' => null    ];
+        'from' => 'date-time',
+'to' => 'date-time',
+'room' => null,
+'instructor' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +99,10 @@ class Gym implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_id' => 'companyId',
-'studio_id' => 'studioId',
-'company_name' => 'companyName',
-'studio_name' => 'studioName',
-'base_url' => 'baseUrl'    ];
+        'from' => 'from',
+'to' => 'to',
+'room' => 'room',
+'instructor' => 'instructor'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +110,10 @@ class Gym implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'company_id' => 'setCompanyId',
-'studio_id' => 'setStudioId',
-'company_name' => 'setCompanyName',
-'studio_name' => 'setStudioName',
-'base_url' => 'setBaseUrl'    ];
+        'from' => 'setFrom',
+'to' => 'setTo',
+'room' => 'setRoom',
+'instructor' => 'setInstructor'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +121,10 @@ class Gym implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'company_id' => 'getCompanyId',
-'studio_id' => 'getStudioId',
-'company_name' => 'getCompanyName',
-'studio_name' => 'getStudioName',
-'base_url' => 'getBaseUrl'    ];
+        'from' => 'getFrom',
+'to' => 'getTo',
+'room' => 'getRoom',
+'instructor' => 'getInstructor'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +184,10 @@ class Gym implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['company_id'] = isset($data['company_id']) ? $data['company_id'] : null;
-        $this->container['studio_id'] = isset($data['studio_id']) ? $data['studio_id'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
-        $this->container['studio_name'] = isset($data['studio_name']) ? $data['studio_name'] : null;
-        $this->container['base_url'] = isset($data['base_url']) ? $data['base_url'] : null;
+        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
+        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
+        $this->container['room'] = isset($data['room']) ? $data['room'] : null;
+        $this->container['instructor'] = isset($data['instructor']) ? $data['instructor'] : null;
     }
 
     /**
@@ -221,121 +215,97 @@ class Gym implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets company_id
+     * Gets from
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getCompanyId()
+    public function getFrom()
     {
-        return $this->container['company_id'];
+        return $this->container['from'];
     }
 
     /**
-     * Sets company_id
+     * Sets from
      *
-     * @param int $company_id company_id
+     * @param \DateTime $from from
      *
      * @return $this
      */
-    public function setCompanyId($company_id)
+    public function setFrom($from)
     {
-        $this->container['company_id'] = $company_id;
+        $this->container['from'] = $from;
 
         return $this;
     }
 
     /**
-     * Gets studio_id
+     * Gets to
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getStudioId()
+    public function getTo()
     {
-        return $this->container['studio_id'];
+        return $this->container['to'];
     }
 
     /**
-     * Sets studio_id
+     * Sets to
      *
-     * @param int $studio_id studio_id
+     * @param \DateTime $to to
      *
      * @return $this
      */
-    public function setStudioId($studio_id)
+    public function setTo($to)
     {
-        $this->container['studio_id'] = $studio_id;
+        $this->container['to'] = $to;
 
         return $this;
     }
 
     /**
-     * Gets company_name
+     * Gets room
      *
      * @return string
      */
-    public function getCompanyName()
+    public function getRoom()
     {
-        return $this->container['company_name'];
+        return $this->container['room'];
     }
 
     /**
-     * Sets company_name
+     * Sets room
      *
-     * @param string $company_name company_name
+     * @param string $room room
      *
      * @return $this
      */
-    public function setCompanyName($company_name)
+    public function setRoom($room)
     {
-        $this->container['company_name'] = $company_name;
+        $this->container['room'] = $room;
 
         return $this;
     }
 
     /**
-     * Gets studio_name
+     * Gets instructor
      *
      * @return string
      */
-    public function getStudioName()
+    public function getInstructor()
     {
-        return $this->container['studio_name'];
+        return $this->container['instructor'];
     }
 
     /**
-     * Sets studio_name
+     * Sets instructor
      *
-     * @param string $studio_name studio_name
+     * @param string $instructor instructor
      *
      * @return $this
      */
-    public function setStudioName($studio_name)
+    public function setInstructor($instructor)
     {
-        $this->container['studio_name'] = $studio_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets base_url
-     *
-     * @return string
-     */
-    public function getBaseUrl()
-    {
-        return $this->container['base_url'];
-    }
-
-    /**
-     * Sets base_url
-     *
-     * @param string $base_url base_url
-     *
-     * @return $this
-     */
-    public function setBaseUrl($base_url)
-    {
-        $this->container['base_url'] = $base_url;
+        $this->container['instructor'] = $instructor;
 
         return $this;
     }

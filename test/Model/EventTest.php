@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginRequestParametersTest
+ * EventTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace iBooking\Client;
 
 /**
- * LoginRequestParametersTest Class Doc Comment
+ * EventTest Class Doc Comment
  *
  * @category    Class
- * @description LoginRequestParameters
+ * @description Event
  * @package     iBooking\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LoginRequestParametersTest extends \PHPUnit_Framework_TestCase
+class EventTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,51 +69,86 @@ class LoginRequestParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LoginRequestParameters"
+     * Test "Event"
      */
-    public function testLoginRequestParameters()
+    public function testEvent()
     {
     }
 
     /**
-     * Test attribute "username"
+     * Test attribute "id"
      */
-    public function testPropertyUsername()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "password"
+     * Test attribute "category_id"
      */
-    public function testPropertyPassword()
+    public function testPropertyCategoryId()
     {
     }
 
     /**
-     * Test attribute "lang"
+     * Test attribute "name"
      */
-    public function testPropertyLang()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "ttl"
+     * Test attribute "description"
      */
-    public function testPropertyTtl()
+    public function testPropertyDescription()
     {
     }
 
     /**
-     * Test attribute "access_token"
+     * Test attribute "image"
      */
-    public function testPropertyAccessToken()
+    public function testPropertyImage()
     {
     }
 
     /**
-     * Test attribute "spc"
+     * Test attribute "capacity"
      */
-    public function testPropertySpc()
+    public function testPropertyCapacity()
+    {
+    }
+
+    /**
+     * Test attribute "available"
+     */
+    public function testPropertyAvailable()
+    {
+    }
+
+    /**
+     * Test attribute "members_only"
+     */
+    public function testPropertyMembersOnly()
+    {
+    }
+
+    /**
+     * Test attribute "prices"
+     */
+    public function testPropertyPrices()
+    {
+    }
+
+    /**
+     * Test attribute "dates"
+     */
+    public function testPropertyDates()
+    {
+    }
+
+    /**
+     * Test attribute "studio"
+     */
+    public function testPropertyStudio()
     {
     }
 }

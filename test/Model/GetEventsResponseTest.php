@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginRequestParametersTest
+ * GetEventsResponseTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace iBooking\Client;
 
 /**
- * LoginRequestParametersTest Class Doc Comment
+ * GetEventsResponseTest Class Doc Comment
  *
  * @category    Class
- * @description LoginRequestParameters
+ * @description GetEventsResponse
  * @package     iBooking\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LoginRequestParametersTest extends \PHPUnit_Framework_TestCase
+class GetEventsResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,51 +69,9 @@ class LoginRequestParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LoginRequestParameters"
+     * Test "GetEventsResponse"
      */
-    public function testLoginRequestParameters()
-    {
-    }
-
-    /**
-     * Test attribute "username"
-     */
-    public function testPropertyUsername()
-    {
-    }
-
-    /**
-     * Test attribute "password"
-     */
-    public function testPropertyPassword()
-    {
-    }
-
-    /**
-     * Test attribute "lang"
-     */
-    public function testPropertyLang()
-    {
-    }
-
-    /**
-     * Test attribute "ttl"
-     */
-    public function testPropertyTtl()
-    {
-    }
-
-    /**
-     * Test attribute "access_token"
-     */
-    public function testPropertyAccessToken()
-    {
-    }
-
-    /**
-     * Test attribute "spc"
-     */
-    public function testPropertySpc()
+    public function testGetEventsResponse()
     {
     }
 }

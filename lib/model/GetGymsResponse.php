@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -29,13 +29,13 @@
 namespace iBooking\Client\model;
 
 use \ArrayAccess;
-use iBooking\Client\ObjectSerializer;
+use \iBooking\Client\ObjectSerializer;
 
 /**
  * GetGymsResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class GetGymsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'gyms' => '\Swagger\Client\model\Gym[]'    ];
+        'gyms' => '\iBooking\Client\model\Gym[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization

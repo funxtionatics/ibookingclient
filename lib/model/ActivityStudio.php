@@ -1,6 +1,6 @@
 <?php
 /**
- * Gym
+ * ActivityStudio
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \iBooking\Client\ObjectSerializer;
 
 /**
- * Gym Class Doc Comment
+ * ActivityStudio Class Doc Comment
  *
  * @category Class
  * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Gym implements ModelInterface, ArrayAccess
+class ActivityStudio implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Gym implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Gym';
+    protected static $swaggerModelName = 'Activity_studio';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,8 @@ class Gym implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'company_id' => 'int',
-'studio_id' => 'int',
-'company_name' => 'string',
-'studio_name' => 'string',
-'base_url' => 'string'    ];
+        'id' => 'float',
+'name' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +65,8 @@ class Gym implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'company_id' => 'int64',
-'studio_id' => 'int64',
-'company_name' => null,
-'studio_name' => null,
-'base_url' => null    ];
+        'id' => null,
+'name' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +95,8 @@ class Gym implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_id' => 'companyId',
-'studio_id' => 'studioId',
-'company_name' => 'companyName',
-'studio_name' => 'studioName',
-'base_url' => 'baseUrl'    ];
+        'id' => 'id',
+'name' => 'name'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +104,8 @@ class Gym implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'company_id' => 'setCompanyId',
-'studio_id' => 'setStudioId',
-'company_name' => 'setCompanyName',
-'studio_name' => 'setStudioName',
-'base_url' => 'setBaseUrl'    ];
+        'id' => 'setId',
+'name' => 'setName'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +113,8 @@ class Gym implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'company_id' => 'getCompanyId',
-'studio_id' => 'getStudioId',
-'company_name' => 'getCompanyName',
-'studio_name' => 'getStudioName',
-'base_url' => 'getBaseUrl'    ];
+        'id' => 'getId',
+'name' => 'getName'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +174,8 @@ class Gym implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['company_id'] = isset($data['company_id']) ? $data['company_id'] : null;
-        $this->container['studio_id'] = isset($data['studio_id']) ? $data['studio_id'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
-        $this->container['studio_name'] = isset($data['studio_name']) ? $data['studio_name'] : null;
-        $this->container['base_url'] = isset($data['base_url']) ? $data['base_url'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -221,121 +203,49 @@ class Gym implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets company_id
+     * Gets id
      *
-     * @return int
+     * @return float
      */
-    public function getCompanyId()
+    public function getId()
     {
-        return $this->container['company_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets company_id
+     * Sets id
      *
-     * @param int $company_id company_id
+     * @param float $id id
      *
      * @return $this
      */
-    public function setCompanyId($company_id)
+    public function setId($id)
     {
-        $this->container['company_id'] = $company_id;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets studio_id
-     *
-     * @return int
-     */
-    public function getStudioId()
-    {
-        return $this->container['studio_id'];
-    }
-
-    /**
-     * Sets studio_id
-     *
-     * @param int $studio_id studio_id
-     *
-     * @return $this
-     */
-    public function setStudioId($studio_id)
-    {
-        $this->container['studio_id'] = $studio_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_name
+     * Gets name
      *
      * @return string
      */
-    public function getCompanyName()
+    public function getName()
     {
-        return $this->container['company_name'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets company_name
+     * Sets name
      *
-     * @param string $company_name company_name
+     * @param string $name name
      *
      * @return $this
      */
-    public function setCompanyName($company_name)
+    public function setName($name)
     {
-        $this->container['company_name'] = $company_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets studio_name
-     *
-     * @return string
-     */
-    public function getStudioName()
-    {
-        return $this->container['studio_name'];
-    }
-
-    /**
-     * Sets studio_name
-     *
-     * @param string $studio_name studio_name
-     *
-     * @return $this
-     */
-    public function setStudioName($studio_name)
-    {
-        $this->container['studio_name'] = $studio_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets base_url
-     *
-     * @return string
-     */
-    public function getBaseUrl()
-    {
-        return $this->container['base_url'];
-    }
-
-    /**
-     * Sets base_url
-     *
-     * @param string $base_url base_url
-     *
-     * @return $this
-     */
-    public function setBaseUrl($base_url)
-    {
-        $this->container['base_url'] = $base_url;
+        $this->container['name'] = $name;
 
         return $this;
     }

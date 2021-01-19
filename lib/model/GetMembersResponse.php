@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -29,13 +29,13 @@
 namespace iBooking\Client\model;
 
 use \ArrayAccess;
-use iBooking\Client\ObjectSerializer;
+use \iBooking\Client\ObjectSerializer;
 
 /**
  * GetMembersResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,17 +57,17 @@ class GetMembersResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'count' => 'int',
-'members' => '\Swagger\Client\model\Member[]',
-'gym' => '\Swagger\Client\model\Gym',
+'members' => '\iBooking\Client\model\Member[]',
+'gym' => '\iBooking\Client\model\Gym',
 'phone' => 'string',
 'email' => 'string',
-'address' => '\Swagger\Client\model\Address',
+'address' => '\iBooking\Client\model\Address',
 'first_created' => '\DateTime',
 'contract_started' => '\DateTime',
 'offerings' => 'int[]',
 'active' => 'bool',
 'frozen' => 'bool',
-'has_accepted_communication' => '\Swagger\Client\model\CommunicationChannels',
+'has_accepted_communication' => '\iBooking\Client\model\CommunicationChannels',
 'in_loyality_program' => 'bool'    ];
 
     /**

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace iBooking\Client\Model;
+namespace iBooking\Client;
 
 /**
  * ErrorResponseTest Class Doc Comment
  *
  * @category    Class
  * @description ErrorResponse
- * @package     Swagger\Client
+ * @package     iBooking\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

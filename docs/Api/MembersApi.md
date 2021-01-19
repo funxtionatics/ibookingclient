@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\model\UserInfoResponse**](../Model/UserInfoResponse.md)
+[**\iBooking\Client\model\UserInfoResponse**](../Model/UserInfoResponse.md)
 
 ### Authorization
 

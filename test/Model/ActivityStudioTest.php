@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginRequestParametersTest
+ * ActivityStudioTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace iBooking\Client;
 
 /**
- * LoginRequestParametersTest Class Doc Comment
+ * ActivityStudioTest Class Doc Comment
  *
  * @category    Class
- * @description LoginRequestParameters
+ * @description ActivityStudio
  * @package     iBooking\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LoginRequestParametersTest extends \PHPUnit_Framework_TestCase
+class ActivityStudioTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,51 +69,23 @@ class LoginRequestParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LoginRequestParameters"
+     * Test "ActivityStudio"
      */
-    public function testLoginRequestParameters()
+    public function testActivityStudio()
     {
     }
 
     /**
-     * Test attribute "username"
+     * Test attribute "id"
      */
-    public function testPropertyUsername()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "password"
+     * Test attribute "name"
      */
-    public function testPropertyPassword()
-    {
-    }
-
-    /**
-     * Test attribute "lang"
-     */
-    public function testPropertyLang()
-    {
-    }
-
-    /**
-     * Test attribute "ttl"
-     */
-    public function testPropertyTtl()
-    {
-    }
-
-    /**
-     * Test attribute "access_token"
-     */
-    public function testPropertyAccessToken()
-    {
-    }
-
-    /**
-     * Test attribute "spc"
-     */
-    public function testPropertySpc()
+    public function testPropertyName()
     {
     }
 }

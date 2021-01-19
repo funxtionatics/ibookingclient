@@ -1,6 +1,6 @@
 <?php
 /**
- * Gym
+ * Price
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \iBooking\Client\ObjectSerializer;
 
 /**
- * Gym Class Doc Comment
+ * Price Class Doc Comment
  *
  * @category Class
  * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Gym implements ModelInterface, ArrayAccess
+class Price implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Gym implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Gym';
+    protected static $swaggerModelName = 'Price';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,9 @@ class Gym implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'company_id' => 'int',
-'studio_id' => 'int',
-'company_name' => 'string',
-'studio_name' => 'string',
-'base_url' => 'string'    ];
+        'all' => 'double',
+'member' => 'double',
+'not_member' => 'double'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +66,9 @@ class Gym implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'company_id' => 'int64',
-'studio_id' => 'int64',
-'company_name' => null,
-'studio_name' => null,
-'base_url' => null    ];
+        'all' => 'double',
+'member' => 'double',
+'not_member' => 'double'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +97,9 @@ class Gym implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_id' => 'companyId',
-'studio_id' => 'studioId',
-'company_name' => 'companyName',
-'studio_name' => 'studioName',
-'base_url' => 'baseUrl'    ];
+        'all' => 'all',
+'member' => 'member',
+'not_member' => 'notMember'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +107,9 @@ class Gym implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'company_id' => 'setCompanyId',
-'studio_id' => 'setStudioId',
-'company_name' => 'setCompanyName',
-'studio_name' => 'setStudioName',
-'base_url' => 'setBaseUrl'    ];
+        'all' => 'setAll',
+'member' => 'setMember',
+'not_member' => 'setNotMember'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +117,9 @@ class Gym implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'company_id' => 'getCompanyId',
-'studio_id' => 'getStudioId',
-'company_name' => 'getCompanyName',
-'studio_name' => 'getStudioName',
-'base_url' => 'getBaseUrl'    ];
+        'all' => 'getAll',
+'member' => 'getMember',
+'not_member' => 'getNotMember'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +179,9 @@ class Gym implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['company_id'] = isset($data['company_id']) ? $data['company_id'] : null;
-        $this->container['studio_id'] = isset($data['studio_id']) ? $data['studio_id'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
-        $this->container['studio_name'] = isset($data['studio_name']) ? $data['studio_name'] : null;
-        $this->container['base_url'] = isset($data['base_url']) ? $data['base_url'] : null;
+        $this->container['all'] = isset($data['all']) ? $data['all'] : null;
+        $this->container['member'] = isset($data['member']) ? $data['member'] : null;
+        $this->container['not_member'] = isset($data['not_member']) ? $data['not_member'] : null;
     }
 
     /**
@@ -221,121 +209,73 @@ class Gym implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets company_id
+     * Gets all
      *
-     * @return int
+     * @return double
      */
-    public function getCompanyId()
+    public function getAll()
     {
-        return $this->container['company_id'];
+        return $this->container['all'];
     }
 
     /**
-     * Sets company_id
+     * Sets all
      *
-     * @param int $company_id company_id
+     * @param double $all Price for both members and non-members. If used, events.prices.member and events.prices.notMember are not in use.
      *
      * @return $this
      */
-    public function setCompanyId($company_id)
+    public function setAll($all)
     {
-        $this->container['company_id'] = $company_id;
+        $this->container['all'] = $all;
 
         return $this;
     }
 
     /**
-     * Gets studio_id
+     * Gets member
      *
-     * @return int
+     * @return double
      */
-    public function getStudioId()
+    public function getMember()
     {
-        return $this->container['studio_id'];
+        return $this->container['member'];
     }
 
     /**
-     * Sets studio_id
+     * Sets member
      *
-     * @param int $studio_id studio_id
+     * @param double $member Price for members. If used, events.prices.all are not in use.
      *
      * @return $this
      */
-    public function setStudioId($studio_id)
+    public function setMember($member)
     {
-        $this->container['studio_id'] = $studio_id;
+        $this->container['member'] = $member;
 
         return $this;
     }
 
     /**
-     * Gets company_name
+     * Gets not_member
      *
-     * @return string
+     * @return double
      */
-    public function getCompanyName()
+    public function getNotMember()
     {
-        return $this->container['company_name'];
+        return $this->container['not_member'];
     }
 
     /**
-     * Sets company_name
+     * Sets not_member
      *
-     * @param string $company_name company_name
+     * @param double $not_member Price for non-members. If used, events.prices.all are not in use.
      *
      * @return $this
      */
-    public function setCompanyName($company_name)
+    public function setNotMember($not_member)
     {
-        $this->container['company_name'] = $company_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets studio_name
-     *
-     * @return string
-     */
-    public function getStudioName()
-    {
-        return $this->container['studio_name'];
-    }
-
-    /**
-     * Sets studio_name
-     *
-     * @param string $studio_name studio_name
-     *
-     * @return $this
-     */
-    public function setStudioName($studio_name)
-    {
-        $this->container['studio_name'] = $studio_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets base_url
-     *
-     * @return string
-     */
-    public function getBaseUrl()
-    {
-        return $this->container['base_url'];
-    }
-
-    /**
-     * Sets base_url
-     *
-     * @param string $base_url base_url
-     *
-     * @return $this
-     */
-    public function setBaseUrl($base_url)
-    {
-        $this->container['base_url'] = $base_url;
+        $this->container['not_member'] = $not_member;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginRequestParametersTest
+ * EventSpecificsTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace iBooking\Client;
 
 /**
- * LoginRequestParametersTest Class Doc Comment
+ * EventSpecificsTest Class Doc Comment
  *
  * @category    Class
- * @description LoginRequestParameters
+ * @description EventSpecifics
  * @package     iBooking\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LoginRequestParametersTest extends \PHPUnit_Framework_TestCase
+class EventSpecificsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,51 +69,37 @@ class LoginRequestParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LoginRequestParameters"
+     * Test "EventSpecifics"
      */
-    public function testLoginRequestParameters()
+    public function testEventSpecifics()
     {
     }
 
     /**
-     * Test attribute "username"
+     * Test attribute "from"
      */
-    public function testPropertyUsername()
+    public function testPropertyFrom()
     {
     }
 
     /**
-     * Test attribute "password"
+     * Test attribute "to"
      */
-    public function testPropertyPassword()
+    public function testPropertyTo()
     {
     }
 
     /**
-     * Test attribute "lang"
+     * Test attribute "room"
      */
-    public function testPropertyLang()
+    public function testPropertyRoom()
     {
     }
 
     /**
-     * Test attribute "ttl"
+     * Test attribute "instructor"
      */
-    public function testPropertyTtl()
-    {
-    }
-
-    /**
-     * Test attribute "access_token"
-     */
-    public function testPropertyAccessToken()
-    {
-    }
-
-    /**
-     * Test attribute "spc"
-     */
-    public function testPropertySpc()
+    public function testPropertyInstructor()
     {
     }
 }

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -29,13 +29,13 @@
 namespace iBooking\Client\model;
 
 use \ArrayAccess;
-use iBooking\Client\ObjectSerializer;
+use \iBooking\Client\ObjectSerializer;
 
 /**
  * LoginResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'auth_token' => 'string',
 'auth_token_expires' => 'string',
-'user' => '\Swagger\Client\model\UserInfoResponse'    ];
+'user' => '\iBooking\Client\model\UserInfoResponse'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization

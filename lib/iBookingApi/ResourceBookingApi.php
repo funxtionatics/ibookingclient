@@ -1,10 +1,10 @@
 <?php
 /**
- * GymApi
+ * ResourceBookingApi
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -39,14 +39,14 @@ use iBooking\Client\HeaderSelector;
 use iBooking\Client\ObjectSerializer;
 
 /**
- * GymApi Class Doc Comment
+ * ResourceBookingApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GymApi
+class ResourceBookingApi
 {
     /**
      * @var ClientInterface
@@ -87,35 +87,35 @@ class GymApi
     }
 
     /**
-     * Operation getGyms
+     * Operation getActivities
      *
-     * Get gyms
+     * Get activities
      *
      *
-     * @return \iBooking\Client\model\GetGymsResponse
-     *@throws \InvalidArgumentException
      * @throws \iBooking\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \iBooking\Client\model\GetActivitiesResponse
      */
-    public function getGyms()
+    public function getActivities()
     {
-        list($response) = $this->getGymsWithHttpInfo();
+        list($response) = $this->getActivitiesWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation getGymsWithHttpInfo
+     * Operation getActivitiesWithHttpInfo
      *
-     * Get gyms
+     * Get activities
      *
      *
-     * @return array of \Swagger\Client\model\GetGymsResponse, HTTP status code, HTTP response headers (array of strings)
-     *@throws \InvalidArgumentException
      * @throws \iBooking\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \iBooking\Client\model\GetActivitiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getGymsWithHttpInfo()
+    public function getActivitiesWithHttpInfo()
     {
-        $returnType = '\iBooking\Client\model\GetGymsResponse';
-        $request = $this->getGymsRequest();
+        $returnType = '\iBooking\Client\model\GetActivitiesResponse';
+        $request = $this->getActivitiesRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -166,15 +166,7 @@ class GymApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\iBooking\Client\model\GetGymsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\model\ErrorResponse',
+                        '\iBooking\Client\model\GetActivitiesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -185,17 +177,17 @@ class GymApi
     }
 
     /**
-     * Operation getGymsAsync
+     * Operation getActivitiesAsync
      *
-     * Get gyms
+     * Get activities
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGymsAsync()
+    public function getActivitiesAsync()
     {
-        return $this->getGymsAsyncWithHttpInfo()
+        return $this->getActivitiesAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -204,18 +196,18 @@ class GymApi
     }
 
     /**
-     * Operation getGymsAsyncWithHttpInfo
+     * Operation getActivitiesAsyncWithHttpInfo
      *
-     * Get gyms
+     * Get activities
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGymsAsyncWithHttpInfo()
+    public function getActivitiesAsyncWithHttpInfo()
     {
-        $returnType = '\iBooking\Client\model\GetGymsResponse';
-        $request = $this->getGymsRequest();
+        $returnType = '\iBooking\Client\model\GetActivitiesResponse';
+        $request = $this->getActivitiesRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,16 +247,16 @@ class GymApi
     }
 
     /**
-     * Create request for operation 'getGyms'
+     * Create request for operation 'getActivities'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getGymsRequest()
+    protected function getActivitiesRequest()
     {
 
-        $resourcePath = '/Chain/gyms';
+        $resourcePath = '/ResourceBooking/getActivities';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

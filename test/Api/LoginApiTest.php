@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace iBooking\Client\Api;
+namespace iBooking\Client;
 
 use iBooking\Client\Configuration;
 use iBooking\Client\ApiException;
@@ -35,7 +35,7 @@ use iBooking\Client\ObjectSerializer;
  * LoginApiTest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  iBooking\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
