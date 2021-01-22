@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**logout**](LoginApi.md#logout) | **POST** /User/logout | Invalidates the token provided, and resets any auth session used for other iBooking services.
 
 # **login**
-> \iBooking\Client\model\LoginResponse login($body)
+> \iBooking\Client\Model\LoginResponse login($body)
 
 This method will upon success return a token that must be used for further communication with the API.
 
@@ -17,12 +17,12 @@ This method will upon success return a token that must be used for further commu
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new iBooking\Client\iBookingApi\LoginApi(
+$apiInstance = new iBooking\Client\Api\LoginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \iBooking\Client\model\LoginRequestParameters(); // \iBooking\Client\model\LoginRequestParameters | LoginRequestParameters object
+$body = new \iBooking\Client\Model\LoginRequestParameters(); // \iBooking\Client\Model\LoginRequestParameters | LoginRequestParameters object
 
 try {
     $result = $apiInstance->login($body);
@@ -37,11 +37,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\iBooking\Client\model\LoginRequestParameters**](../Model/LoginRequestParameters.md)| LoginRequestParameters object |
+ **body** | [**\iBooking\Client\Model\LoginRequestParameters**](../Model/LoginRequestParameters.md)| LoginRequestParameters object |
 
 ### Return type
 
-[**\iBooking\Client\model\LoginResponse**](../Model/LoginResponse.md)
+[**\iBooking\Client\Model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **logout**
-> logout($body)
+> \iBooking\Client\Model\Success logout($body)
 
 Invalidates the token provided, and resets any auth session used for other iBooking services.
 
@@ -68,16 +68,17 @@ $config = iBooking\Client\Configuration::getDefaultConfiguration()->setApiKey('X
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = iBooking\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Access-Token', 'Bearer');
 
-$apiInstance = new iBooking\Client\iBookingApi\LoginApi(
+$apiInstance = new iBooking\Client\Api\LoginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \iBooking\Client\model\Body(); // \iBooking\Client\model\Body | Token to invalidate
+$body = new \iBooking\Client\Model\LogoutPayload(); // \iBooking\Client\Model\LogoutPayload | Token to invalidate
 
 try {
-    $apiInstance->logout($body);
+    $result = $apiInstance->logout($body);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoginApi->logout: ', $e->getMessage(), PHP_EOL;
 }
@@ -88,11 +89,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\iBooking\Client\model\Body**](../Model/Body.md)| Token to invalidate | [optional]
+ **body** | [**\iBooking\Client\Model\LogoutPayload**](../Model/LogoutPayload.md)| Token to invalidate | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\iBooking\Client\Model\Success**](../Model/Success.md)
 
 ### Authorization
 
@@ -101,7 +102,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
