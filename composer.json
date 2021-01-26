@@ -1,12 +1,13 @@
 {
     "name": "funxtionatics/ibookingclient",
-    "description": "",
+    "description": "A library that interfaces with the iBooking API",
     "keywords": [
         "swagger",
         "php",
         "sdk",
         "api"
     ],
+    "type": "library",
     "homepage": "http://swagger.io",
     "license": "proprietary",
     "authors": [
