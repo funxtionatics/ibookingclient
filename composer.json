@@ -1,5 +1,5 @@
 {
-    "name": "GIT_USER_ID/GIT_REPO_ID",
+    "name": "funxtionatics/ibookingclient",
     "description": "",
     "keywords": [
         "swagger",
@@ -32,5 +32,12 @@
     },
     "autoload-dev": {
         "psr-4": { "iBooking\\Client\\" : "test/" }
-    }
+    },
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://bitbucket.org/funxtionatics/ibookingclient/"
+        }
+    ]
 }
