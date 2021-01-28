@@ -38,7 +38,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/funxtionatics/ibookingclient/"
+            "url": "https://github.com/funxtionatics/ibookingclient"
         }
     ]
 }
