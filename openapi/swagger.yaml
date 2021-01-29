@@ -1431,8 +1431,8 @@ components:
           properties:
             id:
               type: string
-            name::
-            type: string
+            name:
+              type: string
         category:
           $ref: '#/components/schemas/Category'
         available:
@@ -1527,6 +1527,8 @@ components:
     MembersResponse:
       type: object
       properties:
+        count:
+          type: integer
         members:
           type: array
           items:

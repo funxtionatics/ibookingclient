@@ -56,6 +56,7 @@ class MembersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'count' => 'int',
         'members' => '\iBooking\Client\Model\Member[]'    ];
 
     /**
@@ -64,6 +65,7 @@ class MembersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'count' => null,
         'members' => null    ];
 
     /**
@@ -93,6 +95,7 @@ class MembersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'count' => 'count',
         'members' => 'members'    ];
 
     /**
@@ -101,6 +104,7 @@ class MembersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'count' => 'setCount',
         'members' => 'setMembers'    ];
 
     /**
@@ -109,6 +113,7 @@ class MembersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'count' => 'getCount',
         'members' => 'getMembers'    ];
 
     /**
@@ -169,6 +174,7 @@ class MembersResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['members'] = isset($data['members']) ? $data['members'] : null;
     }
 
@@ -195,6 +201,29 @@ class MembersResponse implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+    /**
+     * Gets count
+     *
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int $count count
+     *
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
 
     /**
      * Gets members
