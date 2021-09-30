@@ -858,7 +858,7 @@ components:
             - not-applicable
             - signed
             - revoked
-            - unkown
+            - unknown
         dateOfBirth:
           type: string
           description: 'Format: YYYY-MM-DD.'

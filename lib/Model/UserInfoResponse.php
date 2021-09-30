@@ -644,7 +644,7 @@ self::AVTALEGIRO_STATUS_UNKNOWN,        ];
     /**
      * Sets avtalegiro_status
      *
-     * @param string $avtalegiro_status {new,not-applicable,signed,revoked,unkown}.
+     * @param string $avtalegiro_status {new,not-applicable,signed,revoked,unknown}.
      *
      * @return $this
      */

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **studio** | **int** | Studio ID | [optional] 
 **contract** | [**\iBooking\Client\Model\Contract**](Contract.md) |  | [optional] 
 **noshow_count** | **int** | Current active noshow count | [optional] 
-**avtalegiro_status** | **string** | {new,not-applicable,signed,revoked,unkown}. | [optional] 
+**avtalegiro_status** | **string** | {new,not-applicable,signed,revoked,unknown}. | [optional] 
 **date_of_birth** | [**\DateTime**](\DateTime.md) | Format: YYYY-MM-DD. | [optional] 
 **address** | [**\iBooking\Client\Model\Address**](Address.md) |  | [optional] 
 **has_password** | **bool** |  | [optional] 
