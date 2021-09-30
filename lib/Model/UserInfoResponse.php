@@ -236,7 +236,7 @@ class UserInfoResponse implements ModelInterface, ArrayAccess
 const AVTALEGIRO_STATUS_NOT_APPLICABLE = 'not-applicable';
 const AVTALEGIRO_STATUS_SIGNED = 'signed';
 const AVTALEGIRO_STATUS_REVOKED = 'revoked';
-const AVTALEGIRO_STATUS_UNKOWN = 'unkown';
+const AVTALEGIRO_STATUS_UNKNOWN = 'unknown';
 
     /**
      * Gets allowable values of the enum
@@ -250,7 +250,7 @@ const AVTALEGIRO_STATUS_UNKOWN = 'unkown';
 self::AVTALEGIRO_STATUS_NOT_APPLICABLE,
 self::AVTALEGIRO_STATUS_SIGNED,
 self::AVTALEGIRO_STATUS_REVOKED,
-self::AVTALEGIRO_STATUS_UNKOWN,        ];
+self::AVTALEGIRO_STATUS_UNKNOWN,        ];
     }
 
     /**

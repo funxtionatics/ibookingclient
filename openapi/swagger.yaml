@@ -852,7 +852,7 @@ components:
           format: int64
         avtalegiroStatus:
           type: string
-          description: '{new,not-applicable,signed,revoked,unkown}.'
+          description: '{new,not-applicable,signed,revoked,unknown}.'
           enum:
             - new
             - not-applicable
